@@ -11,8 +11,10 @@ namespace TestingToken
         {
 
             RegisterServices();
-            IServiceScope scope = _serviceProvider.CreateScope();
-            scope.ServiceProvider.GetRequiredService<ConsoleApplication>().Run();
+            //IServiceScope scope = _serviceProvider.CreateScope();
+            //scope.ServiceProvider.GetRequiredService<ConsoleApplication>().Run();
+            var consoleApp = _serviceProvider.GetService<ConsoleApplication>();
+            consoleApp.Run();
             DisposeServices();            
         }
 
